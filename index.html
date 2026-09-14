@@ -38,6 +38,28 @@ body{
   animation:gateBg 9s ease-in-out infinite; transition:opacity .7s, visibility .7s;}
 @keyframes gateBg{0%,100%{background-position:0% 30%}50%{background-position:100% 70%}}
 #gate.gone{opacity:0; visibility:hidden;}
+
+/* ================= LOCK ================= */
+#lock{position:fixed; inset:0; z-index:98; display:grid; place-items:center; padding:24px; text-align:center;
+  background:linear-gradient(170deg,#ffe0ee,#ffc9e0 55%,#ffb3d4); background-size:200% 200%;
+  animation:gateBg 9s ease-in-out infinite; opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .5s, visibility .5s;}
+#lock.show{opacity:1; visibility:visible; pointer-events:auto;}
+.lock-content{position:relative; z-index:2;}
+.lock-icon{font-size:44px; margin-bottom:8px;}
+.lock-content h2{font-family:var(--fd); font-size:clamp(22px,6.4vw,27px); font-weight:900; color:var(--plum); margin:0 0 8px;}
+.lock-content p{font-size:13.5px; color:var(--plum-soft); margin:0 0 22px; max-width:30ch; margin-left:auto; margin-right:auto;}
+#lockInput{font-family:var(--fb); font-size:26px; font-weight:700; letter-spacing:14px; text-align:center;
+  width:180px; padding:12px 0 12px 14px; border:2px solid var(--rose-300); border-radius:var(--r-md);
+  background:#fff; color:var(--plum); outline:none;}
+#lockInput:focus{border-color:var(--pink-deep);}
+#lockInput.shake{animation:lockShake .4s;}
+@keyframes lockShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(9px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+#lockBtn{display:block; margin:18px auto 0; font-family:var(--fb); font-weight:700; font-size:14px; color:#fff;
+  background:linear-gradient(135deg,var(--pink),var(--pink-deep)); border:none; padding:12px 30px; border-radius:999px;
+  cursor:pointer; box-shadow:0 10px 20px rgba(216,27,96,.28);}
+#lockBtn:active{transform:scale(.96);}
+.lock-err{min-height:18px; font-size:12.5px; color:var(--pink-deep); font-weight:600; margin-top:12px !important;}
 .gate-fx{position:absolute; inset:0; z-index:1; pointer-events:none;}
 .gate-fx span{position:absolute; bottom:-8%; opacity:0; font-size:18px; line-height:1;
   animation:gateRise 9s ease-in infinite; display:grid; place-items:center;}
@@ -469,6 +491,17 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
     <p id="gateSub"></p>
     <div class="tap-cue">👆 tap the seal to open</div>
     <div class="gate-sig"><span></span>Mayukh<i>♡</i>Moni<span></span></div>
+  </div>
+</div>
+
+<div id="lock">
+  <div class="lock-content">
+    <div class="lock-icon">🔒</div>
+    <h2>Ekta chhoto tala</h2>
+    <p>Sudhu tumi khulte parbe, Moni 💗</p>
+    <input id="lockInput" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="••••" autocomplete="off">
+    <button id="lockBtn">Unlock 🔓</button>
+    <p class="lock-err" id="lockErr"></p>
   </div>
 </div>
 
@@ -1075,8 +1108,26 @@ $('#gate').addEventListener('click', ()=>{
   setTimeout(()=>{
     $('#gate').classList.add('gone'); confetti(110,.35,.9);
     if(CONFIG.musicUrl) playMusic().then(()=>{ $('#musicBtn').classList.add('on'); $('#musicBtn').textContent='❚❚'; }).catch(()=>{});
+    $('#lock').classList.add('show');
+    setTimeout(()=>$('#lockInput').focus(),400);
   },1150);
 });
+
+/* ----- lock ----- */
+const LOCK_PIN = '2209';
+function tryUnlock(){
+  const v = $('#lockInput').value.trim();
+  if(v === LOCK_PIN){
+    $('#lock').classList.remove('show');
+    buzz([15,30,15]); confetti(70,.4,.85);
+  } else {
+    $('#lockErr').textContent = 'Thik hoyni, abar try koro 💭';
+    $('#lockInput').classList.remove('shake'); void $('#lockInput').offsetWidth; $('#lockInput').classList.add('shake');
+    $('#lockInput').value=''; buzz(40);
+  }
+}
+$('#lockBtn').addEventListener('click', tryUnlock);
+$('#lockInput').addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
 
 /* ----- photo ----- */
 $('#likeBtn').addEventListener('click', e=>{
