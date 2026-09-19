@@ -411,30 +411,6 @@ body{
 .sign b{display:block; font-family:var(--fd); font-size:20px; color:var(--pink-deep); font-weight:700;}
 .sign span{font-size:11px; color:var(--plum-soft);}
 
-/* ================= CH: kochi letter ================= */
-.kochi-letter{position:relative; padding:24px 20px 26px; background:linear-gradient(165deg,#fff6fa,#ffe9f2 55%,#ffdcec);
-  border:1px solid rgba(255,180,210,.5); overflow:hidden;}
-.kochi-letter::before{content:'💌'; position:absolute; top:-16px; right:-10px; font-size:64px; opacity:.14; transform:rotate(14deg);}
-.kochi-letter .gate-fx{opacity:.7;}
-.kochi-letter > *:not(.gate-fx){position:relative; z-index:2;}
-.kochi-mark{display:flex; align-items:center; gap:9px; padding-bottom:13px; border-bottom:1px dashed var(--rose-300); margin-bottom:16px;}
-.kochi-mark .sealdot{width:28px; height:28px; border-radius:50%; background:linear-gradient(145deg,#ff7fb3,#c2185b);
-  color:#fff; display:grid; place-items:center; font-size:13px; flex:none; box-shadow:0 4px 10px rgba(216,27,96,.35);}
-.kochi-mark b{font-size:10.5px; letter-spacing:.7px; color:var(--plum-soft); font-weight:700;}
-.kochi-mark i{margin-left:auto; font-style:normal; font-size:10.5px; color:var(--pink); font-weight:700;}
-.kochi-quote{font-family:var(--fd); font-size:60px; line-height:.6; color:var(--rose-300); margin:0 0 6px;}
-#kochiBody{font-size:13.5px; line-height:1.95; color:#5d3547;}
-#kochiBody p{margin:0 0 15px;}
-#kochiBody .glow{display:block; text-align:center; font-family:var(--fd); font-weight:700; font-size:15.5px;
-  color:var(--pink-deep); margin:20px 0; line-height:1.5; text-shadow:0 2px 14px rgba(216,27,96,.25);}
-#kochiBody .hush{font-style:italic; color:var(--plum-soft);}
-.kochi-sign{text-align:right; margin-top:20px; padding-top:14px; border-top:1px dashed var(--rose-300);}
-.kochi-sign b{display:block; font-family:var(--fd); font-size:21px; color:var(--pink-deep); font-weight:700;}
-.kochi-sign span{font-size:11px; color:var(--plum-soft);}
-.kochi-gone{padding:38px 20px; text-align:center;}
-.kochi-gone .ic{font-size:38px; display:block; margin-bottom:12px; opacity:.7;}
-.kochi-gone p{font-family:var(--fd); font-size:14.5px; color:var(--pink-deep); line-height:1.8; margin:0 auto; max-width:30ch;}
-
 /* ================= CH: wish ================= */
 textarea{width:100%; font-family:var(--fb); font-size:13.5px; color:var(--plum); border:1px solid var(--rose-200);
   border-radius:var(--r-md); padding:14px; background:#fff; resize:none; line-height:1.6; box-shadow:var(--shadow-soft);}
@@ -536,84 +512,9 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
   </section>
 
   <!-- 2 KOCHI LETTER -->
-  <section class="chapter" data-key="kochi">
-    <span class="eyebrow">CHAPTER TWO</span>
-    <h2>একটা চিঠি, না বলা কথার</h2>
-    <p class="lede">এটা পড়ার আগে একটু সময় নে, মণি। ধীরে ধীরে পড়িস। 💌</p>
-    <div class="card kochi-letter">
-      <div class="gate-fx" aria-hidden="true">
-        <span>💗</span><span>✨</span><span>🌸</span><span>💕</span><span>💗</span><span>✨</span><span>🤍</span>
-        <span>💘</span><span>💓</span><span>💗</span><span>🩷</span><span>💕</span><span>✨</span><span>💗</span>
-      </div>
-      <div class="kochi-mark"><div class="sealdot">💌</div><b>একান্ত ব্যক্তিগত চিঠি</b><i>কোচির কলমে</i></div>
-      <div class="kochi-quote">“</div>
-      <div id="kochiBody">
-        <p>মণি,</p>
-        <p>কোথা থেকে শুরু করব জানি না। কিছু কথা আছে, যেগুলো মুখে বলা যায় না… কিছু অনুভূতি আছে, যেগুলো যতই বোঝাতে চাই, শব্দগুলো কেমন যেন ছোট হয়ে যায়। তাই আজ তোকে এই চিঠিটা লিখছি।</p>
-        <p>তুই আমার সবচেয়ে প্রিয় মানুষ।<br>আমার দেখা সবচেয়ে কিউট, সবচেয়ে নিষ্পাপ একটা মন। আর হ্যাঁ… কী করে না বলি—আমার দেখা সবচেয়ে সুন্দরী মেয়েটাও তুই।</p>
-        <p>এই কথাগুলো তোকে ভালোবাসি বলেই বলছি—এমনটা ভাবিস না। কারণ তুই এগুলো সত্যিই ডিজার্ভ করিস। তোর মধ্যে এমন কিছু একটা আছে, যেটা হয়তো আমি ঠিক করে কোনোদিন ভাষায় প্রকাশ করতে পারব না। শুধু জানি, তুই আমার কাছে ভীষণ স্পেশাল।</p>
-        <p>কখনো কখনো মনে হয়, আমার মতো একটা মানুষ তোর মতো একটা মেয়েকে পাওয়ার যোগ্যই না। আমি তোকে যতটা ভালো রাখার কথা ছিল, তার চেয়ে অনেক বেশি কষ্ট দিয়েছি। অনেক কথা শুনিনি, অনেক সময় তোকে বুঝিনি, অনেক সময় নিজের রাগ, নিজের জেদ, নিজের ভুল দিয়ে তোকে আঘাত করেছি।</p>
-        <p>তারপরও জানিস, ভাগ্যকে আমি মাঝে মাঝে খুব অদ্ভুত একটা জিনিস মনে করি।</p>
-        <p>হয়তো এই ভাগ্যই আমাদের এতবার কাঁদিয়েছে, একে অপরের থেকে দূরে সরিয়ে দিয়েছে। আবার এই ভাগ্যই হয়তো আমাদের প্রথমবার এতটা কাছে এনেছিল। এত মানুষের ভিড়ে তুই আর আমি—কীভাবে যেন একে অপরের জীবনে এসে পড়লাম।</p>
-        <p class="hush">হয়তো আমাদের গল্পটা সহজ ছিল না।<br>হয়তো এখনও সহজ নয়।</p>
-        <p>কিন্তু তুই আমার জীবনে আসার পর থেকে একটা জিনিস বুঝেছি—কাউকে কাছে পাওয়া আর কাউকে নিজের মানুষ মনে হওয়া এক জিনিস নয়।</p>
-        <p>তুই আমার কাছে শুধু কাছের মানুষ হয়ে যাসনি…<br>তুই ধীরে ধীরে আমার অভ্যাস হয়ে গেছিস।</p>
-        <p>প্রতিদিন রাতে হয়তো তোকে নিয়ে খুব বেশি কথা হয় না। কখনো হয়তো শুধু দুটো কথা বলেই ঘুমিয়ে পড়ি। কিন্তু সেই দুটো কথাও যদি না হয়, জানিস আমার রাতটা কেমন যেন অসম্পূর্ণ থেকে যায়।</p>
-        <p class="hush">ঘুম আসে না।<br>মনে হয়, আজকের দিনটা যেন শেষই হলো না।</p>
-        <p>হ্যাঁ, আমি সবসময় তোর সব কথা শুনতে পারি না। সবসময় তোকে বুঝতেও পারি না। তোকে অনেক কষ্ট দিয়েছি—এটা আমি অস্বীকার করছি না।</p>
-        <p>কিন্তু তুই যখন কষ্ট পাস, যখন তোর গলায় কান্না শুনি… তখন ভেতর থেকে কোথায় যেন একটা জায়গা ভেঙে যায়।</p>
-        <p>সেদিন তোর কান্নাটা শুনে আমিও আর নিজেকে সামলাতে পারিনি।</p>
-        <p>তুই হয়তো কোনোদিন বুঝবি না, তোর চোখের জল আমার কাছে কতটা ভারী। তুই কাঁদলে আমি হয়তো চুপ করে থাকি, হয়তো ঠিকমতো কিছু বলতে পারি না… কিন্তু তার মানে এই নয় যে আমার কিছু হয় না।</p>
-        <p class="hush">বরং অনেক বেশি কিছু হয়।<br>শুধু আমি সব অনুভূতি মুখে বলতে পারি না।</p>
-        <p>এইবারও তাই আমার সাহস হচ্ছে না তোকে মেসেজ করার।</p>
-        <p>নিজের চোখেই নিজেকে অনেক ছোট করে ফেলেছি।<br>তোর সামনে দাঁড়ানোর মতো, তোকে চোখে চোখ রেখে কথা বলার মতো সাহসটা যেন হারিয়ে ফেলেছি।</p>
-        <p>আমি চাই না, আমার একটা কথায় আবার তোর চোখে জল আসুক।<br>আমি চাই না, আমার সঙ্গে কথা বলতে গিয়ে তুই আবার কষ্ট পাস।</p>
-        <p>তাই চুপ করে আছি।</p>
-        <p>কিন্তু এই চুপ করে থাকাটাও যে কতটা কষ্টের, সেটা হয়তো শুধু আমিই জানি।</p>
-        <p>জানি, কথা না বলেও আমরা দুজনেই কষ্ট পাচ্ছি।<br>জানি, দূরে থেকেও আমরা দুজনেই হয়তো একে অপরকেই খুঁজছি।</p>
-        <p>তবুও আমি একটা জিনিস চাই।</p>
-        <p>এই চিঠিটা পড়ার পর…<br>তুই আমাকে একটা ফোন করিস।</p>
-        <p class="hush">শুধু একবার।</p>
-        <p>আমি জানি না ফোনে কী বলব। হয়তো অনেকক্ষণ চুপ করে থাকব। হয়তো কিছু বলতেই পারব না। হয়তো শুধু তোর গলাটা শুনব।</p>
-        <p>কিন্তু তোর গলাটা শুনতে চাই, মণি।</p>
-        <p>কারণ সত্যিটা হলো—</p>
-        <p class="hush">আমি ভালো না।<br>আমি জানি।</p>
-        <p>আমার অনেক ভুল আছে, অনেক খারাপ দিক আছে। তোকে অনেক কষ্ট দিয়েছি। হয়তো আমার মতো কাউকে তোর জীবনে না থাকাই ভালো—এমন কথাও হয়তো সত্যি।</p>
-        <p>হয়তো আমাদের আলাদা হয়ে যাওয়াটাই সবচেয়ে ভালো সিদ্ধান্ত।</p>
-        <p>কিন্তু একটা সমস্যা আছে…<br>আমার মন সেটা মানতে চায় না।<br>একদমই না।</p>
-        <p>যতই নিজেকে বোঝাই যে তোকে ছেড়ে দেওয়াটাই তোর জন্য ভালো, ততবারই আমার ভেতর থেকে একটা কথা উঠে আসে—</p>
-        <p class="glow">“আমি তোকে ছাড়া বাকি জীবনটা কীভাবে কাটাব?”</p>
-        <p>আমি জানি না ভবিষ্যৎ আমাদের জন্য কী লিখে রেখেছে।<br>জানি না শেষ পর্যন্ত আমরা একসঙ্গে থাকব কি না।</p>
-        <p>কিন্তু আজ, এই মুহূর্তে, আমার মন থেকে একটা কথাই বের হয়—</p>
-        <p class="glow">আমি তোকে নিয়ে বাঁচতে চাই।</p>
-        <p>তোর সঙ্গে আমার বাকি জীবনটা কাটাতে চাই।<br>তোর সঙ্গে ছোট ছোট ঝগড়া করতে চাই, আবার একটু পরেই তোকে মানাতে চাই।<br>রাতে তোর সঙ্গে কথা বলতে বলতে ঘুমিয়ে পড়তে চাই।<br>তোর হাসিটা দেখতে চাই।<br>আর যখন তুই কাঁদবি, তখন তোর চোখের জলটা নিজের হাতে মুছে দিতে চাই।</p>
-        <p>আমি জানি না আমি তোর জন্য কতটা ভালো মানুষ হতে পারব।</p>
-        <p>তোর প্রতি আমার যত ভুল, যত কষ্ট, যত অপরাধ—সবকিছুর জন্য আমাকে ক্ষমা করে দিস, মণি।</p>
-        <p>আমি জানি শুধু "সরি" বললে সব ঠিক হয়ে যায় না।</p>
-        <p>তবুও বলছি—</p>
-        <p class="glow">সরি, মণি।<br>খুব সরি।</p>
-        <p>তোর কোচি এখনও তোর জন্য অপেক্ষা করে আছে।</p>
-        <p>তোর একটা ফোনের জন্য।<br>তোর একটা "হ্যালো" শোনার জন্য।<br>তোর গলাটা শোনার জন্য।</p>
-        <p>আর তোর কান্না…<br>সেটা ওর কাছে সত্যিই খুব কষ্টের।</p>
-        <p>হয়তো সেই কারণেই তোকে মেসেজ করার সাহস হচ্ছে না। কারণ ও জানে, কথা বলতে গেলেই হয়তো আবার তুই কাঁদবি… আর তোর কান্না শুনে ও নিজেকেও সামলাতে পারবে না।</p>
-        <p>তাই এবার তুই যদি পারিস…</p>
-        <p class="glow">তুই ওকে একটা মেসেজ করিস।</p>
-        <p>অন্তত দুটো মানুষ আবার একবার নিজেদের মনের কথাগুলো বলতে পারবে।</p>
-        <p>আর মণি…</p>
-        <p>এই চিঠিটা হয়তো অনেক কথা বলে ফেলল।<br>হয়তো কিছু কথা বলা উচিত ছিল না।<br>হয়তো কিছু কথা অনেক আগেই বলা উচিত ছিল।</p>
-        <p>কিন্তু একটা কথা শেষবারের মতো বলি—</p>
-        <p class="glow">তুই আমার জীবনের একটা অধ্যায় নস।<br>তুই এমন একটা গল্প, যেটার শেষ আমি কোনোদিন লিখতে চাইনি।</p>
-        <p>আর একটা কথা —</p>
-        <p class="glow">"Mayukh শুধু Moni-কেই ভালোবাসবে।"</p>
-        <p class="hush">আর… এই মেসেজটা ২২ সেপ্টেম্বরের পর আপনাআপনি মুছে যাবে।<br>আমি অপেক্ষা করব।</p>
-      </div>
-      <div class="kochi-sign"><b>তোর প্রিয়,</b><span>কোচি</span></div>
-    </div>
-  </section>
-
   <!-- 3 DOOR -->
   <section class="chapter" data-key="door">
-    <span class="eyebrow">CHAPTER THREE</span>
+    <span class="eyebrow">CHAPTER TWO</span>
     <h2 id="doorHeading"></h2>
     <p class="lede" id="doorLede"></p>
     <div class="door" id="doorCard">
@@ -633,7 +534,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 4 GIFT -->
   <section class="chapter" data-key="gift">
-    <span class="eyebrow">CHAPTER FOUR</span>
+    <span class="eyebrow">CHAPTER THREE</span>
     <h2>A little package, addressed to you</h2>
     <p class="lede">Go on, pull the ribbon — you know you want to peek inside. 🎀</p>
     <div class="card">
@@ -651,7 +552,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 5 BALLOONS -->
   <section class="chapter" data-key="balloons">
-    <span class="eyebrow">CHAPTER FIVE</span>
+    <span class="eyebrow">CHAPTER FOUR</span>
     <h2>Protita balloon e ekta kotha</h2>
     <p class="lede">Shob gulo fatate hobe. Ekta o baad dewa jabe na. 💥</p>
     <div class="balloons" id="balloons"></div>
@@ -661,7 +562,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 6 MOMENTS TOGETHER -->
   <section class="chapter" data-key="moments">
-    <span class="eyebrow">CHAPTER SIX</span>
+    <span class="eyebrow">CHAPTER FIVE</span>
     <h2>Amader eksathe kata muhurto</h2>
     <p class="lede">Duijoner scrapbook ta — niche shob gulo dekho.</p>
     <div class="gallery" id="rail"></div>
@@ -669,7 +570,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 7 MOMENTS SOLO -->
   <section class="chapter" data-key="solo">
-    <span class="eyebrow">CHAPTER SEVEN</span>
+    <span class="eyebrow">CHAPTER SIX</span>
     <h2>Tumi, shudhu tumi</h2>
     <p class="lede">Ei gulo te ami nei — shudhu tumi, ar tomar hasi ta. Ei tai jothesto.</p>
     <div class="gallery" id="railSolo"></div>
@@ -677,7 +578,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 8 REASONS -->
   <section class="chapter" data-key="reasons">
-    <span class="eyebrow">CHAPTER EIGHT</span>
+    <span class="eyebrow">CHAPTER SEVEN</span>
     <h2>Keno tumi amar prithibi</h2>
     <p class="lede">Charta card, charta karon. Protita ulte dekho — pichone ekta kore lukano kotha ache.</p>
     <div class="reasons" id="reasons"></div>
@@ -686,7 +587,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 9 SCRATCH -->
   <section class="chapter" data-key="scratch">
-    <span class="eyebrow">CHAPTER NINE</span>
+    <span class="eyebrow">CHAPTER EIGHT</span>
     <h2>Ekta kotha, foil er niche</h2>
     <p class="lede">Angul diye ghosho. Puro ta na ghosle porte parbe na. 🪙</p>
     <div class="scratch" id="scratch"><div class="under" id="scratchUnder"></div><canvas id="scratchCv"></canvas></div>
@@ -694,7 +595,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 10 CANDLES -->
   <section class="chapter" data-key="candles">
-    <span class="eyebrow">CHAPTER TEN</span>
+    <span class="eyebrow">CHAPTER NINE</span>
     <h2>Ekhon shob cheye important kaj</h2>
     <p class="lede">Chokh bondho koro. Ekta wish koro — karo ke bolbe na. Tarpor mombati nibhao. 🕯️</p>
     <div class="card ritual">
@@ -716,7 +617,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 11 COUPONS -->
   <section class="chapter" data-key="coupons">
-    <span class="eyebrow">CHAPTER ELEVEN</span>
+    <span class="eyebrow">CHAPTER TEN</span>
     <h2>Tomar jonno kichu coupon</h2>
     <p class="lede">Ei gulo shotti. Jokhon iccha redeem korte parbe — ekhon ekta try koro.</p>
     <div class="coupons" id="coupons"></div>
@@ -724,7 +625,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 12 QUIZ -->
   <section class="chapter" data-key="quiz">
-    <span class="eyebrow">CHAPTER TWELVE</span>
+    <span class="eyebrow">CHAPTER ELEVEN</span>
     <h2>Amader niye chhoto ekta test</h2>
     <p class="lede">Bhul hole kichu hobe na. Ami tao tomake beshi bhalobashi. 😄</p>
     <div class="card quiz" id="quiz"></div>
@@ -732,7 +633,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 13 LETTER -->
   <section class="chapter" data-key="letter">
-    <span class="eyebrow">CHAPTER THIRTEEN</span>
+    <span class="eyebrow">CHAPTER TWELVE</span>
     <h2 id="letterHead"></h2>
     <p class="lede">Ei ta ami onek bar likhe, muche, abar likhechi.</p>
     <div class="card letter">
@@ -744,7 +645,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 14 WISH -->
   <section class="chapter" data-key="wish">
-    <span class="eyebrow">CHAPTER FOURTEEN</span>
+    <span class="eyebrow">CHAPTER THIRTEEN</span>
     <h2>Ebar tomar pala</h2>
     <p class="lede">Ei bochor ki chao? Likhe felo — ami note kore rakhbo, shotti.</p>
     <textarea id="wishInput" rows="4" placeholder="Ei bochor ami chai…"></textarea>
@@ -786,7 +687,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
    ✏️  EDIT ONLY THIS BLOCK
    ========================================================================== */
 const CONFIG = {
-  /* ⏰ Chapter 3 er dorja ei somoy e khulbe. Her phone's local time. */
+  /* ⏰ Chapter 2 er dorja ei somoy e khulbe. Her phone's local time. */
   unlockAt    : "2026-09-22T00:00:00",
   unlockLabel : "22 September, 12:00 AM",
 
@@ -915,7 +816,6 @@ let isOpen = Date.now() >= UNLOCK_TS;
 /* ----- chapter definitions: gate = requirement to press Next ----- */
 const CH = [
   {key:'photo',    gate:'photo',    hint:'One tap on the heart, that\'s all 💗'},
-  {key:'kochi',    gate:null},
   {key:'door',     gate:'door',     hint:''},
   {key:'gift',     gate:'gift',     hint:'Age packet ta khulte hobe 🎁'},
   {key:'balloons', gate:'balloons', hint:'Shob balloon fatao 🎈'},
