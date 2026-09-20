@@ -642,7 +642,6 @@ const CONFIG = {
   unlockAt    : "2026-09-22T00:00:00",
   unlockLabel : "22 September, 12:00 AM",
 
-  herNickname : "Moni",
   herName     : "Moni",
   yourSignoff : "Yours eternally,",
   yourName    : "Tr Mayukh",
@@ -749,7 +748,7 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const pad = (n,l=2) => String(n).padStart(l,'0');
 const buzz = ms => { try{ navigator.vibrate && navigator.vibrate(ms); }catch(e){} };
-const NICK = CONFIG.herNickname, NAME = CONFIG.herName;
+const NICK = CONFIG.herName, NAME = CONFIG.herName;
 const UNLOCK_TS = new Date(CONFIG.unlockAt).getTime();
 let isOpen = Date.now() >= UNLOCK_TS;
 
