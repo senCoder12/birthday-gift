@@ -648,6 +648,10 @@ const CONFIG = {
   yourName    : "Tr Mayukh",
   musicUrl : "music/tu-hain-toh.mp4",
 
+  /* Chapter 11 wish jar: Formspree endpoint. Leave empty to skip emailing
+     and only show wishes on-screen. */
+  wishFormEndpoint : "https://formspree.io/f/xaenqbpb",
+
   avatarPhoto : "images/avatar_moni.jpg",
   heroPhoto   : "images/best_chumu.png",
   finaleVideo : "videos/vid.mp4",
@@ -728,8 +732,8 @@ const CONFIG = {
     "And atlast but not the least — May this birthday bring you as much happiness, sweet treats, and peace as you bring into my world every single day."
   ],
 
-  finaleTitle : "It's just beggining 🌟",
-  finaleText  : "Kintu ashol surprise ta ei app e chilo na — shetа holo tumi, amar jibone. Shubho jonmodin, amar Moni. Ei bochor ta tomar jonno ekdom tomar motoi sundor hok.",
+  finaleTitle : "It's just beginning 🌟",
+  finaleText  : "Kintu ashol surprise ta ei app e chilo na — setа holo tumi, amar jibone. Shubho jonmodin, amar Moni. Ei bochor ta tomar jonno ekdom tomar motoi sundor hok.",
 
   eggs : [
     "Kichu khujcho? 👀",
@@ -781,7 +785,7 @@ function paint(){
   $('#progTxt').textContent = `${idx+1} / ${CH.length}`;
   $('#backBtn').disabled = idx === 0;
   const n = $('#nextBtn'), ok = canNext();
-  if(idx === CH.length-1){ n.textContent='💗'; n.classList.add('off'); $('#navHint').textContent='Ei page tai shesh. Bar bar hridoye tap korte paro.'; return; }
+  if(idx === CH.length-1){ n.textContent='💗'; n.classList.add('off'); $('#navHint').textContent='This is the end. Feel free to keep tapping the heart.'; return; }
   n.textContent = idx===0 ? 'Shuru koro →' : 'Next →';
   n.classList.toggle('off', !ok);
   if(c.gate === 'door' && !isOpen){ $('#navHint').innerHTML = `🔒 <b id="hintMini">—</b> baki`; $('#navHint').classList.add('warn'); }
@@ -1151,6 +1155,13 @@ $('#saveWish').addEventListener('click', ()=>{
   wishes.push(v); $('#wishInput').value='';
   $('#wishList').innerHTML = wishes.map(w=>`<div class="wish-item"><span>🌠</span><span>${esc(w)}</span></div>`).join('');
   confetti(60,.45); toast('Wish jar e rekhe dilam ✨'); buzz(25);
+  if(CONFIG.wishFormEndpoint){
+    fetch(CONFIG.wishFormEndpoint, {
+      method:'POST',
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body: JSON.stringify({ name: NICK, message: v, submitted_at: new Date().toString() })
+    }).catch(()=>{});
+  }
 });
 
 /* ----- CH14 finale ----- */
