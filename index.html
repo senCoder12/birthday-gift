@@ -317,20 +317,6 @@ body{
 .moment .meta p{margin:0; font-size:10.5px; color:var(--plum-soft); line-height:1.5;}
 .tap-chip{background:#fff; border:1px solid var(--rose-200); color:var(--pink-deep); border-radius:999px; padding:7px 13px; font-size:11px; font-weight:700; box-shadow:var(--shadow-soft);}
 
-/* ================= CH: reasons ================= */
-.reasons{display:grid; grid-template-columns:1fr 1fr; gap:11px;}
-.flip{perspective:900px; cursor:pointer; height:150px;}
-.flip-in{position:relative; width:100%; height:100%; transition:transform .6s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d;}
-.flip.flipped .flip-in{transform:rotateY(180deg);}
-.face{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:var(--r-md);
-  padding:14px 13px; border:1px solid rgba(255,207,226,.6); box-shadow:0 6px 16px rgba(216,27,96,.07); background:#fff; display:flex; flex-direction:column;}
-.face .emo{font-size:17px; margin-bottom:8px;}
-.face h5{margin:0 0 6px; font-size:13px; font-weight:700; line-height:1.3;}
-.face p{margin:0; font-size:11.5px; color:var(--plum-soft); line-height:1.55;}
-.face .cue{margin-top:auto; font-size:9.5px; color:var(--pink); font-weight:700;}
-.face.back{transform:rotateY(180deg); background:linear-gradient(150deg,#ff6ba7,#d81b60); border-color:transparent; justify-content:center;}
-.face.back p{color:#fff; font-size:12.5px; font-weight:600; line-height:1.6;}
-
 /* ================= CH: scratch ================= */
 .scratch{position:relative; width:100%; aspect-ratio:8/5; border-radius:var(--r-md); overflow:hidden; touch-action:none;
   background:linear-gradient(140deg,#fff0f7,#ffe0ee); display:grid; place-items:center;}
@@ -360,24 +346,6 @@ body{
 .cake-msg{min-height:22px; font-size:13.5px; font-weight:700; color:var(--pink-deep); margin:0 0 14px; opacity:0; transition:opacity .4s;}
 .cake-msg.show{opacity:1;}
 .mic-link{display:block; margin:12px auto 0; background:none; border:none; cursor:pointer; font-size:11.5px; color:var(--plum-soft); text-decoration:underline; font-family:var(--fb);}
-
-/* ================= CH: coupons ================= */
-.coupons{display:grid; gap:11px; min-height:110px;}
-.coupon{position:relative; background:linear-gradient(100deg,#fff,#fff6fa); border:1.5px dashed var(--rose-300); border-radius:var(--r-md);
-  padding:15px 16px; cursor:pointer; overflow:hidden; display:flex; align-items:center; gap:13px; transition:transform .2s;}
-.coupon:active{transform:scale(.98);}
-.coupon::before,.coupon::after{content:''; position:absolute; width:18px; height:18px; border-radius:50%; background:#ffeef5; top:50%; transform:translateY(-50%);}
-.coupon::before{left:-10px;} .coupon::after{right:-10px;}
-.coupon .ico{font-size:24px; flex:none;}
-.coupon h5{margin:0 0 3px; font-size:13.5px; font-weight:800;}
-.coupon p{margin:0; font-size:11.5px; color:var(--plum-soft); line-height:1.5;}
-.coupon .use{margin-left:auto; flex:none; font-size:10.5px; font-weight:800; color:var(--pink);}
-.stamp{position:absolute; right:14px; top:50%; z-index:4; pointer-events:none; transform:translateY(-50%) rotate(-16deg) scale(2.4);
-  opacity:0; border:3px solid #1d7a45; color:#1d7a45; font-size:13px; font-weight:900; letter-spacing:1.5px; padding:4px 10px; border-radius:6px;}
-.coupon.used{opacity:.72; border-style:solid; border-color:var(--rose-200);}
-.coupon.used .stamp{animation:stampIn .45s cubic-bezier(.2,1.4,.4,1) forwards;}
-.coupon.used .use{visibility:hidden;}
-@keyframes stampIn{to{opacity:.9; transform:translateY(-50%) rotate(-16deg) scale(1);}}
 
 /* ================= CH: quiz ================= */
 .quiz{padding:18px 16px 20px; min-height:250px;}
@@ -512,7 +480,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
   </section>
 
   <!-- 2 KOCHI LETTER -->
-  <!-- 3 DOOR -->
+  <!-- 3 DOOR -- commented out during dev, see CH array in script for nav bypass
   <section class="chapter" data-key="door">
     <span class="eyebrow">CHAPTER TWO</span>
     <h2 id="doorHeading"></h2>
@@ -531,6 +499,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
       <p class="note" id="doorNote"></p>
     </div>
   </section>
+  -->
 
   <!-- 4 GIFT -->
   <section class="chapter" data-key="gift">
@@ -563,8 +532,8 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
   <!-- 6 MOMENTS TOGETHER -->
   <section class="chapter" data-key="moments">
     <span class="eyebrow">CHAPTER FIVE</span>
-    <h2>Amader eksathe kata muhurto</h2>
-    <p class="lede">Duijoner scrapbook ta — niche shob gulo dekho.</p>
+    <h2>Moments we spent together</h2>
+    <p class="lede">Our little scrapbook — scroll down and see them all.</p>
     <div class="gallery" id="rail"></div>
   </section>
 
@@ -572,30 +541,21 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
   <section class="chapter" data-key="solo">
     <span class="eyebrow">CHAPTER SIX</span>
     <h2>Tumi, shudhu tumi</h2>
-    <p class="lede">Ei gulo te ami nei — shudhu tumi, ar tomar hasi ta. Ei tai jothesto.</p>
+    <p class="lede">The Birthday girl, my favorite girl.. the most beautiful girl in the world.</p>
     <div class="gallery" id="railSolo"></div>
-  </section>
-
-  <!-- 8 REASONS -->
-  <section class="chapter" data-key="reasons">
-    <span class="eyebrow">CHAPTER SEVEN</span>
-    <h2>Keno tumi amar prithibi</h2>
-    <p class="lede">Charta card, charta karon. Protita ulte dekho — pichone ekta kore lukano kotha ache.</p>
-    <div class="reasons" id="reasons"></div>
-    <div class="counter" id="flipCount"></div>
   </section>
 
   <!-- 9 SCRATCH -->
   <section class="chapter" data-key="scratch">
-    <span class="eyebrow">CHAPTER EIGHT</span>
-    <h2>Ekta kotha, foil er niche</h2>
+    <span class="eyebrow">CHAPTER SEVEN</span>
+    <h2>A message, under the foil</h2>
     <p class="lede">Angul diye ghosho. Puro ta na ghosle porte parbe na. 🪙</p>
     <div class="scratch" id="scratch"><div class="under" id="scratchUnder"></div><canvas id="scratchCv"></canvas></div>
   </section>
 
   <!-- 10 CANDLES -->
   <section class="chapter" data-key="candles">
-    <span class="eyebrow">CHAPTER NINE</span>
+    <span class="eyebrow">CHAPTER EIGHT</span>
     <h2>Ekhon shob cheye important kaj</h2>
     <p class="lede">Chokh bondho koro. Ekta wish koro — karo ke bolbe na. Tarpor mombati nibhao. 🕯️</p>
     <div class="card ritual">
@@ -615,17 +575,9 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
     </div>
   </section>
 
-  <!-- 11 COUPONS -->
-  <section class="chapter" data-key="coupons">
-    <span class="eyebrow">CHAPTER TEN</span>
-    <h2>Tomar jonno kichu coupon</h2>
-    <p class="lede">Ei gulo shotti. Jokhon iccha redeem korte parbe — ekhon ekta try koro.</p>
-    <div class="coupons" id="coupons"></div>
-  </section>
-
   <!-- 12 QUIZ -->
   <section class="chapter" data-key="quiz">
-    <span class="eyebrow">CHAPTER ELEVEN</span>
+    <span class="eyebrow">CHAPTER NINE</span>
     <h2>Amader niye chhoto ekta test</h2>
     <p class="lede">Bhul hole kichu hobe na. Ami tao tomake beshi bhalobashi. 😄</p>
     <div class="card quiz" id="quiz"></div>
@@ -633,9 +585,8 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 13 LETTER -->
   <section class="chapter" data-key="letter">
-    <span class="eyebrow">CHAPTER TWELVE</span>
+    <span class="eyebrow">CHAPTER TEN</span>
     <h2 id="letterHead"></h2>
-    <p class="lede">Ei ta ami onek bar likhe, muche, abar likhechi.</p>
     <div class="card letter">
       <div class="letter-top"><div class="sealdot">💗</div><b>CONFIDENTIAL LOVE NOTE</b><i>Forever &amp; Always</i></div>
       <div id="letterBody"></div>
@@ -645,7 +596,7 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
 
   <!-- 14 WISH -->
   <section class="chapter" data-key="wish">
-    <span class="eyebrow">CHAPTER THIRTEEN</span>
+    <span class="eyebrow">CHAPTER ELEVEN</span>
     <h2>Ebar tomar pala</h2>
     <p class="lede">Ei bochor ki chao? Likhe felo — ami note kore rakhbo, shotti.</p>
     <textarea id="wishInput" rows="4" placeholder="Ei bochor ami chai…"></textarea>
@@ -692,9 +643,9 @@ const CONFIG = {
   unlockLabel : "22 September, 12:00 AM",
 
   herNickname : "Moni",
-  herName     : "Shona",
+  herName     : "Moni",
   yourSignoff : "Yours eternally,",
-  yourName    : "Your number one admirer 💘",
+  yourName    : "Tr Mayukh",
   musicUrl : "music/tu-hain-toh.mp4",
 
   avatarPhoto : "images/avatar_moni.jpg",
@@ -722,61 +673,46 @@ const CONFIG = {
   giftMessage : "Tucked away in here: 1,000 bear hugs, just for you. Spend one whenever you're feeling low — this stash never runs dry.",
 
   balloons : [
-    "Tomar hashi ta amar favourite notification 🔔",
+    "Your smile is my favourite notification 🔔",
     "Prithibir shob cheye cute nak tomar 👃",
-    "Tumi rege geleo cute lago, sorry 😅",
+    "Tomar shathe thaka mane amar shobcheye shanti pawa jaiga 🕊️",
     "Tomar chokh duita puro ekta galaxy 🌌",
-    "Amar shob bhalo din e tumi achho ☀️",
-    "Tomar voice ta amar favourite song 🎵",
-    "Tumi pashe thakle ami shahoshi hoye jai 🦁",
-    "Ami tomake protidin notun kore pochondo kori 💗"
+    "Tomake dekhle mone hoy shob thik ache 🍀",
+    "Tumi haslei amar shara diner klanti uda hoye jay 🌤️",
+    "Ami tomake protidin notun kore valobashi 💗",
+    "Tomar haat dhorle mone hoy kono bhoy nei 🤍",
   ],
 
-  scratchText : "Ami tomake prothom<br>dekhei bujhe gechilam. 💘",
+  scratchText : "Mayukh sudhu Moni kei valobasbe.. I love you Moni.. 💘",
 
   momentsTogether : [
-    { photo:"images/edited_aksathe.png", title:"The night of endless laughter & cake", note:"Tumi amar nake frosting lagiye diyechile — tao cute lagchilo." },
-    { photo:"images/mathai_chumu_dichi.jpeg", title:"Our first rainy walk", note:"Ekta chhata, duijon bhijha manush, ar ekta perfect din." },
+    { photo:"images/edited_aksathe.png", title:"The night of endless laughter & cake", note:"Kichu photo dekhe mon vore jai, tarmodhe eta akta" },
+    { photo:"images/mathai_chumu_dichi.jpeg", title:"Our first distance", note:"Saradin ta amr sobsomoi mone thakbe.. sei asar somoi bristi.." },
     { photo:"images/aksathe_amr_chokhe_chosma.jpeg", title:"Late night phone calls", note:"3am, ghum chokhe, tobu keu phone rakhte chai na." },
-    { photo:"images/nagordolnai.jpeg", title:"Nagordolay prothom uthlam", note:"Upore uthe bhoy peyechile, kintu hasi tha bondho hoyni." },
-    { photo:"images/WhatsApp%20Image%202026-09-13%20at%2011.21.22%20PM.jpeg", title:"Duijoner hater heart", note:"Kono caption lagbe na — hather shape tai sob bole dey." },
-    { photo:"images/WhatsApp%20Image%202026-09-13%20at%2011.47.50%20PM.jpeg", title:"Ekta rat, duijon, hajar ta golpo", note:"Camera off korar por o golpo ta thameni." },
-    { photo:"images/WhatsApp%20Image%202026-09-13%20at%2011.47.11%20PM.jpeg", title:"Shei ghurte jawa bikelta", note:"Purono deyal, notun smriti." },
+    { photo:"images/nagordolnai.jpeg", title:"Nagordolay prothom uthlam", note:"Upore uthe bhoy peye sei hat chepe dhorli... trpr theke akbre dujonei chepe dhore rakhlm" },
+    { photo:"images/WhatsApp%20Image%202026-09-13%20at%2011.21.22%20PM.jpeg", title:"The heart", note:"Kono caption lagbe na — hather shape tai sob bole dey." },
+    { photo:"images/WhatsApp%20Image%202026-09-13%20at%2011.47.50%20PM.jpeg", title:"Ekta sondhe, duijon, hajar ta golpo", note:"Etar sathe r akta chand o frame a chilo.. kintu amr chand jokhon frame a ache tkn onno chand fika" },
+    { photo:"images/WhatsApp%20Image%202026-09-13%20at%2011.47.11%20PM.jpeg", title:"Shei ghurte jawa bikelta", note:"Jani amk ektu valo kore pose dite hoto.. but smy ta valo kete chilo" },
     { photo:"images/WhatsApp%20Image%202026-09-13%20at%2011.23.01%20PM.jpeg", title:"Chhoto chhoto muhurto", note:"Ekta phul, ekta hat dhora — eituku i onek." },
     { photo:"images/amdr_aksathe.jpeg", title:"Amader ekta mirror selfie", note:"Kono reason lage na — tumi pashe thakle sob i frame-worthy." },
-    { photo:"images/aksathe_daria.jpeg", title:"Shei function er bikel", note:"Tumi shajgoj korle ami cheye i thaki, kotha bolte bhule jai." }
+    { photo:"images/aksathe_daria.jpeg", title:"Thanks sabu ke", note:"Ful ta hoito ache akhono tr kache.. r sei din toke onk sundor lagchilo.." }
   ],
 
   momentsSolo : [
-    { photo:"images/moni_saree_pore.jpeg", title:"Shajgoj kom, hasi beshi", note:"Ei hasita amar shobcheye priyo notification." },
-    { photo:"images/pinky_moni.jpeg", title:"Amar shobcheye priyo hasi", note:"Ei chobi ta dekhle ami ekhono thomke jai." },
-    { photo:"images/monir_jhumko.jpeg", title:"Jhumko porle tumi aro sundor lage", note:"Chhoto detail, kintu ami lokkho kori." },
-    { photo:"images/monir_goina.jpeg", title:"Full glam mode e tumi", note:"Sona-o tomar samne fyaka lage." },
-    { photo:"images/monir_holud_dress.jpeg", title:"Ekta shadharon bikeler hasi", note:"Special kichu na, tobu ami save kore rekhechi." },
-    { photo:"images/Monir_hate_ful.jpeg", title:"Phul hate, hasi mukhe", note:"Tumi rastar dhare daralei jaygata sundor hoye jai." },
-    { photo:"images/moni_yellow.jpeg", title:"Chhad theke sunset dekha", note:"Tumi sunset dekhcho, ami tomake dekhchilam." }
-  ],
-
-  reasons : [
-    { emoji:"✨", title:"Your cute laugh",   text:"Ekta hashi te tumi amar puro din alo kore dao.", secret:"Ei hashi ta record kore rakhte pari na bole ami shotti dukkho pai." },
-    { emoji:"💗", title:"The caring soul",   text:"Kheyechi kina jiggesh koro — ei chhoto jinish tai shob.", secret:"Tumi na thakle ami hoyto nijer kheyal i rakhtam na." },
-    { emoji:"👑", title:"My forever Moni", text:"Adorableness er rani, ar amar mon ta puropuri tomar.", secret:"Amar phone e tomar 400+ chobi ache. Ganghini korbe na please." },
-    { emoji:"😄", title:"Our inside jokes",  text:"Ekta chokher isharai duijon heshe feli — keu bojhe na.", secret:"Amader jokes gulo lame, kintu segulo i ami shobcheye beshi miss kori." }
-  ],
-
-  coupons : [
-    { ico:"🍽️", title:"One free date night", desc:"Jaygata tumi bechhe nebe, bill ta amar." },
-    { ico:"🎬", title:"Unlimited movie picks", desc:"Ami ekbaro complain korbo na. Promise." },
-    { ico:"💆", title:"30-min head massage",   desc:"Jokhon iccha redeem koro, expiry nei." },
-    { ico:"🤐", title:"One 'I was wrong' card", desc:"Ek bar amake haar mante hobe, tarko chara." },
-    { ico:"🍫", title:"Midnight snack run",    desc:"Je kono somoy, je kono abdar." }
+    { photo:"images/moni_saree_pore.jpeg", title:"Amar sundori bou" },
+    { photo:"images/pinky_moni.jpeg", title:"My pinky cutie" },
+    { photo:"images/monir_jhumko.jpeg", title:"Jhumko gira re" },
+    { photo:"images/monir_goina.jpeg", title:"Chol tobe biye ta kore ni ?" },
+    { photo:"images/monir_holud_dress.jpeg", title:"A simple ordinary look which i most love" },
+    { photo:"images/Monir_hate_ful.jpeg", title:"Duto phul ak frame" },
+    { photo:"images/moni_yellow.jpeg", title:"My yellow sun" }
   ],
 
   quiz : [
-    { q:"Amader prothom date kothay hoyechilo?", opts:["Ekta cafe te","Cinema hall e","Rastar pashe fuchka","Amar mone nei 😬"], ans:0, why:"Uttor jai hok, din ta amar mone ache. ☕" },
-    { q:"Ami tomar kon jinish ta shobcheye beshi pochondo kori?", opts:["Tomar hashi","Tomar raag","Tomar ghum-chokh","Shob gulo"], ans:3, why:"Trick question chilo. Uttor shob shomoy 'shob gulo'. 💗" },
-    { q:"Jhogra hole shadharonoto ke age sorry bole?", opts:["Ami","Tumi","Duijon ekshathe","Keui na, memes pathai"], ans:3, why:"Amader conflict resolution strategy: ekta reel. Kaj kore jai. 😂" },
-    { q:"Ei app ta banate koto shomoy legeche?", opts:["10 minute","Ekta pura raat","Onek din dhore","Ginee dekhini"], ans:1, why:"Ghum baad diyechi, kintu tomar hashi tar cheye dami. 🌙" }
+    { q:"Amader prothom dekha kothay hoyechilo?", opts:["Ekta cafe te","Mela te","Rastar pashe fuchka","Amar mone nei 😬"], ans:1, why:"Uttor jai hok, din ta amar mone ache. ☕" },
+    { q:"Ami tomar kon jinish ta shobcheye beshi pochondo kori?", opts:["Tomar hashi","Tomar raag","Tomar chokh","Shob gulo"], ans:3, why:"Trick question chilo. Uttor shob shomoy 'shob gulo'. 💗" },
+    { q:"Amader relationship er shobcheye boro strength ki?", opts:["Trust","Keu kauke na charte para","Ek shathe lorai kora","Ek dujon ke bujhte para"], ans:1, why:"Amader madhye kono kotha na bollei o, dujoner mon ekshathe kaj kore. 🤍" },
+    { q:"Ei app ta banate koto shomoy legeche?", opts:["10 minute","Ekta pura raat","Onek din dhore","Ginee dekhini"], ans:2, why:"Ghum baad diyechi, kintu tr khusi tar cheye dami. 🌙" }
   ],
 
   candleMessages : [
@@ -787,12 +723,12 @@ const CONFIG = {
 
   letter : [
     "Dearest Moni,",
-    "Another year more gorgeous, more radiant, and more cherished. Tumi ordinary muhurto gulokeo poetic kore dao, ar tomar pashe thakata amar shobcheye boro privilege.",
-    "BANGLA:Ami tomake khub bhalobashi, Shona. Tomar hashi tai amar shobcheye priyo shobdo.",
-    "May this birthday bring you as much happiness, sweet treats, and peace as you bring into my world every single day."
+    "Another year more gorgeous, more radiant, and more cherished. Valo thakis moni sobsomoi.. ami sob somoi tr pase achi, prithibir se kona tei thaki ami.",
+    "BANGLA:Ami toke khub bhalobashi, Moni. Tor hashi ta amar sobcheye valo lage. Onk miss kori ekhane toke.",
+    "And atlast but not the least — May this birthday bring you as much happiness, sweet treats, and peace as you bring into my world every single day."
   ],
 
-  finaleTitle : "Golpo ta ekhane shesh 🌟",
+  finaleTitle : "It's just beggining 🌟",
   finaleText  : "Kintu ashol surprise ta ei app e chilo na — shetа holo tumi, amar jibone. Shubho jonmodin, amar Moni. Ei bochor ta tomar jonno ekdom tomar motoi sundor hok.",
 
   eggs : [
@@ -816,15 +752,13 @@ let isOpen = Date.now() >= UNLOCK_TS;
 /* ----- chapter definitions: gate = requirement to press Next ----- */
 const CH = [
   {key:'photo',    gate:'photo',    hint:'One tap on the heart, that\'s all 💗'},
-  {key:'door',     gate:'door',     hint:''},
+  // {key:'door',  gate:'door',     hint:''}, // dev: door chapter section commented out above, skip in nav
   {key:'gift',     gate:'gift',     hint:'Age packet ta khulte hobe 🎁'},
   {key:'balloons', gate:'balloons', hint:'Shob balloon fatao 🎈'},
   {key:'moments',  gate:null},
   {key:'solo',     gate:null},
-  {key:'reasons',  gate:'reasons',  hint:'Charta card i ulte dekho 💭'},
   {key:'scratch',  gate:'scratch',  hint:'Foil ta ghoshe felo 🪙'},
   {key:'candles',  gate:'candles',  hint:'Mombati gulo nibhao 🕯️'},
-  {key:'coupons',  gate:'coupons',  hint:'Ekta coupon redeem koro 🎟️'},
   {key:'quiz',     gate:'quiz',     hint:'Quiz ta shesh koro 🧠'},
   {key:'letter',   gate:'letter',   hint:'Chithi ta shesh hote dao 💌'},
   {key:'wish',     gate:null},
@@ -896,26 +830,27 @@ $('#photoTitle').textContent = CONFIG.photoTitle;
 $('#photoSub').textContent = CONFIG.photoSub;
 $('#giftMessage').textContent = CONFIG.giftMessage;
 $('#scratchUnder').innerHTML = CONFIG.scratchText;
-$('#letterHead').textContent = `Ekta chithi, amar ${NAME} er jonno`;
+$('#letterHead').textContent = `A letter, for my ${NAME}`;
 $('#signOff').textContent = CONFIG.yourSignoff;
 $('#signName').textContent = CONFIG.yourName;
 $('#finaleTitle').textContent = CONFIG.finaleTitle;
 $('#finaleText').textContent = CONFIG.finaleText.replace(/Moni/g,NICK);
 $('#ubTitle').textContent = CONFIG.unlockBannerTitle.replace(/Moni/g,NICK);
 $('#ubText').textContent = CONFIG.unlockBannerText;
-$('#doorWhen').textContent = CONFIG.unlockLabel;
+// $('#doorWhen').textContent = CONFIG.unlockLabel; // dev: door chapter commented out
 if(CONFIG.heroPhoto){ const im=$('#heroPhoto'); im.src=CONFIG.heroPhoto; im.alt=CONFIG.photoTitle; im.style.display='block'; $('#heroPhotoEmpty').style.display='none'; }
 if(CONFIG.avatarPhoto) $('#eggBtn').innerHTML = `<img src="${CONFIG.avatarPhoto}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;
 if(CONFIG.finaleVideo){ $('#finaleVideo').src = CONFIG.finaleVideo; $('#finaleVideoWrap').classList.remove('hidden'); }
 
 function applyMode(){
   $('#gateSub').textContent = isOpen ? CONFIG.gateSubOpen : CONFIG.gateSubLocked;
-  $('#doorHeading').textContent = isOpen ? CONFIG.doorHeadingOpen : CONFIG.doorHeadingLocked;
-  $('#doorLede').textContent    = isOpen ? CONFIG.doorLedeOpen : CONFIG.doorLedeLocked;
-  $('#doorTitle').textContent   = isOpen ? CONFIG.doorTitleOpen : CONFIG.doorTitleLocked;
-  $('#doorNote').textContent    = isOpen ? CONFIG.doorNoteOpen : CONFIG.doorNoteLocked;
-  $('#doorIcon').textContent    = isOpen ? '🎉' : '🔒';
-  $('#doorCard').classList.toggle('opened', isOpen);
+  // door chapter commented out during dev, guard against missing DOM
+  // $('#doorHeading').textContent = isOpen ? CONFIG.doorHeadingOpen : CONFIG.doorHeadingLocked;
+  // $('#doorLede').textContent    = isOpen ? CONFIG.doorLedeOpen : CONFIG.doorLedeLocked;
+  // $('#doorTitle').textContent   = isOpen ? CONFIG.doorTitleOpen : CONFIG.doorTitleLocked;
+  // $('#doorNote').textContent    = isOpen ? CONFIG.doorNoteOpen : CONFIG.doorNoteLocked;
+  // $('#doorIcon').textContent    = isOpen ? '🎉' : '🔒';
+  // $('#doorCard').classList.toggle('opened', isOpen);
 }
 applyMode();
 
@@ -938,8 +873,9 @@ function tick(){
   const h=Math.floor(ms/3600000);  ms-=h*3600000;
   const m=Math.floor(ms/60000);    ms-=m*60000;
   const s=Math.floor(ms/1000);     ms-=s*1000;
-  $('#cD').textContent=d; $('#cH').textContent=pad(h); $('#cM').textContent=pad(m);
-  $('#cS').textContent=pad(s); $('#cMs').textContent=pad(ms,3);
+  // cd-cells countdown display commented out (chapter two)
+  // $('#cD').textContent=d; $('#cH').textContent=pad(h); $('#cM').textContent=pad(m);
+  // $('#cS').textContent=pad(s); $('#cMs').textContent=pad(ms,3);
   const mt=miniText();
   if(mt!==lastMini){ lastMini=mt; const hm=$('#hintMini'); if(hm) hm.textContent=mt; }
   requestAnimationFrame(tick);
@@ -1083,7 +1019,7 @@ $('#rail').addEventListener('click', e=>{
 $('#railSolo').innerHTML = CONFIG.momentsSolo.map((m,i)=>`
   <article class="moment" data-i="${i}">
     <div class="shot"><img src="${m.photo}" alt=""></div>
-    <div class="meta"><h5>${m.title}</h5><p>${m.note}</p></div></article>`).join('');
+    <div class="meta"><h5>${m.title}</h5></div></article>`).join('');
 $('#railSolo').addEventListener('click', e=>{
   const c=e.target.closest('.moment'); if(!c) return;
   const m=CONFIG.momentsSolo[+c.dataset.i];
@@ -1091,23 +1027,6 @@ $('#railSolo').addEventListener('click', e=>{
 });
 
 $('#lightbox').addEventListener('click', ()=> $('#lightbox').classList.remove('show'));
-
-/* ----- CH7 reasons ----- */
-$('#reasons').innerHTML = CONFIG.reasons.map(r=>`
-  <div class="flip"><div class="flip-in">
-    <div class="face"><div class="emo">${r.emoji}</div><h5>${r.title}</h5><p>${r.text}</p><div class="cue">tap for a secret →</div></div>
-    <div class="face back"><p>${r.secret}</p></div></div></div>`).join('');
-const flipped=new Set();
-$('#flipCount').textContent = `0 / ${CONFIG.reasons.length} ulteche`;
-$('#reasons').addEventListener('click', e=>{
-  const f=e.target.closest('.flip'); if(!f) return;
-  f.classList.toggle('flipped'); buzz(12);
-  if(f.classList.contains('flipped')){
-    const r=f.getBoundingClientRect(); burstAt(r.left+r.width/2, r.top+r.height/2, 12);
-    flipped.add(f); $('#flipCount').textContent = `${flipped.size} / ${CONFIG.reasons.length} ulteche`;
-    if(flipped.size===CONFIG.reasons.length) clear('reasons');
-  }
-});
 
 /* ----- CH8 scratch ----- */
 const sc=$('#scratchCv'), sx=sc.getContext('2d'); let scDrawing=false, scDone=false;
@@ -1119,7 +1038,7 @@ function sizeScratch(){
   g.addColorStop(0,'#ff9fc7'); g.addColorStop(.5,'#ff6fa8'); g.addColorStop(1,'#e0246e');
   sx.fillStyle=g; sx.fillRect(0,0,r.width,r.height);
   sx.fillStyle='rgba(255,255,255,.9)'; sx.textAlign='center';
-  sx.font='700 16px "Plus Jakarta Sans", sans-serif'; sx.fillText('🪙 ghosho ekhane', r.width/2, r.height/2-4);
+  sx.font='700 16px "Plus Jakarta Sans", sans-serif'; sx.fillText('🪙 scratch here', r.width/2, r.height/2-4);
   sx.font='600 11px "Plus Jakarta Sans", sans-serif'; sx.fillText('angul diye scratch koro', r.width/2, r.height/2+17);
 }
 const scPos=e=>{ const r=sc.getBoundingClientRect(); const p=e.touches?e.touches[0]:e; return {x:p.clientX-r.left,y:p.clientY-r.top}; };
@@ -1168,17 +1087,6 @@ $('#micBtn').addEventListener('click', async ()=>{
     (function chk(){ an.getByteFrequencyData(d); const avg=d.reduce((a,b)=>a+b,0)/d.length;
       if(avg>62 && !$$('.candle')[0].classList.contains('out')) blowOut(); requestAnimationFrame(chk); })();
   }catch(e){ toast('Mic permission pawa gelo na — button e tap koro'); }
-});
-
-/* ----- CH10 coupons ----- */
-$('#coupons').innerHTML = CONFIG.coupons.map(c=>`
-  <div class="coupon"><div class="ico">${c.ico}</div><div><h5>${c.title}</h5><p>${c.desc}</p></div>
-  <div class="use">REDEEM →</div><div class="stamp">REDEEMED</div></div>`).join('');
-$('#coupons').addEventListener('click', e=>{
-  const c=e.target.closest('.coupon'); if(!c||c.classList.contains('used')) return;
-  c.classList.add('used'); buzz([15,30,15]);
-  const r=c.getBoundingClientRect(); burstAt(r.left+r.width/2, r.top+r.height/2, 22);
-  toast('Redeemed! Ami note kore rakhlam 📝'); clear('coupons');
 });
 
 /* ----- CH11 quiz ----- */
