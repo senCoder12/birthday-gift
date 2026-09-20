@@ -478,6 +478,25 @@ textarea:focus{outline:2px solid var(--rose-300); outline-offset:1px;}
     </div>
   </section>
 
+  <!-- 3 DOOR -->
+  <section class="chapter" data-key="door">
+    <h2 id="doorHeading"></h2>
+    <p class="lede" id="doorLede"></p>
+    <div class="door" id="doorCard">
+      <div class="lk" id="doorIcon">🔒</div>
+      <h3 id="doorTitle"></h3>
+      <p class="when" id="doorWhen"></p>
+      <div class="cd-cells">
+        <div class="cd-c"><b id="cD">0</b><span>DAYS</span></div>
+        <div class="cd-c"><b id="cH">00</b><span>HOURS</span></div>
+        <div class="cd-c"><b id="cM">00</b><span>MIN</span></div>
+        <div class="cd-c"><b id="cS">00</b><span>SEC</span></div>
+        <div class="cd-c ms"><b id="cMs">000</b><span>MS</span></div>
+      </div>
+      <p class="note" id="doorNote"></p>
+    </div>
+  </section>
+
   <!-- 4 GIFT -->
   <section class="chapter" data-key="gift">
     <h2>A little package, addressed to you</h2>
@@ -722,7 +741,7 @@ let isOpen = Date.now() >= UNLOCK_TS;
 /* ----- chapter definitions: gate = requirement to press Next ----- */
 const CH = [
   {key:'photo',    gate:'photo',    hint:'One tap on the heart, that\'s all 💗'},
-  // {key:'door',  gate:'door',     hint:''}, // dev: door chapter section commented out above, skip in nav
+  {key:'door',     gate:'door',     hint:''},
   {key:'gift',     gate:'gift',     hint:'Age packet ta khulte hobe 🎁'},
   {key:'balloons', gate:'balloons', hint:'Shob balloon fatao 🎈'},
   {key:'moments',  gate:null},
@@ -807,20 +826,19 @@ $('#finaleTitle').textContent = CONFIG.finaleTitle;
 $('#finaleText').textContent = CONFIG.finaleText.replace(/Moni/g,NICK);
 $('#ubTitle').textContent = CONFIG.unlockBannerTitle.replace(/Moni/g,NICK);
 $('#ubText').textContent = CONFIG.unlockBannerText;
-// $('#doorWhen').textContent = CONFIG.unlockLabel; // dev: door chapter commented out
+$('#doorWhen').textContent = CONFIG.unlockLabel;
 if(CONFIG.heroPhoto){ const im=$('#heroPhoto'); im.src=CONFIG.heroPhoto; im.alt=CONFIG.photoTitle; im.style.display='block'; $('#heroPhotoEmpty').style.display='none'; }
 if(CONFIG.avatarPhoto) $('#eggBtn').innerHTML = `<img src="${CONFIG.avatarPhoto}" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;
 if(CONFIG.finaleVideo){ $('#finaleVideo').src = CONFIG.finaleVideo; $('#finaleVideoWrap').classList.remove('hidden'); }
 
 function applyMode(){
   $('#gateSub').textContent = isOpen ? CONFIG.gateSubOpen : CONFIG.gateSubLocked;
-  // door chapter commented out during dev, guard against missing DOM
-  // $('#doorHeading').textContent = isOpen ? CONFIG.doorHeadingOpen : CONFIG.doorHeadingLocked;
-  // $('#doorLede').textContent    = isOpen ? CONFIG.doorLedeOpen : CONFIG.doorLedeLocked;
-  // $('#doorTitle').textContent   = isOpen ? CONFIG.doorTitleOpen : CONFIG.doorTitleLocked;
-  // $('#doorNote').textContent    = isOpen ? CONFIG.doorNoteOpen : CONFIG.doorNoteLocked;
-  // $('#doorIcon').textContent    = isOpen ? '🎉' : '🔒';
-  // $('#doorCard').classList.toggle('opened', isOpen);
+  $('#doorHeading').textContent = isOpen ? CONFIG.doorHeadingOpen : CONFIG.doorHeadingLocked;
+  $('#doorLede').textContent    = isOpen ? CONFIG.doorLedeOpen : CONFIG.doorLedeLocked;
+  $('#doorTitle').textContent   = isOpen ? CONFIG.doorTitleOpen : CONFIG.doorTitleLocked;
+  $('#doorNote').textContent    = isOpen ? CONFIG.doorNoteOpen : CONFIG.doorNoteLocked;
+  $('#doorIcon').textContent    = isOpen ? '🎉' : '🔒';
+  $('#doorCard').classList.toggle('opened', isOpen);
 }
 applyMode();
 
@@ -843,9 +861,8 @@ function tick(){
   const h=Math.floor(ms/3600000);  ms-=h*3600000;
   const m=Math.floor(ms/60000);    ms-=m*60000;
   const s=Math.floor(ms/1000);     ms-=s*1000;
-  // cd-cells countdown display commented out (chapter two)
-  // $('#cD').textContent=d; $('#cH').textContent=pad(h); $('#cM').textContent=pad(m);
-  // $('#cS').textContent=pad(s); $('#cMs').textContent=pad(ms,3);
+  $('#cD').textContent=d; $('#cH').textContent=pad(h); $('#cM').textContent=pad(m);
+  $('#cS').textContent=pad(s); $('#cMs').textContent=pad(ms,3);
   const mt=miniText();
   if(mt!==lastMini){ lastMini=mt; const hm=$('#hintMini'); if(hm) hm.textContent=mt; }
   requestAnimationFrame(tick);
